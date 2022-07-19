@@ -1,5 +1,5 @@
 <template>
-    <h1 contenteditable="true" @click="funyboi" v-bind:class="props.class"
+    <h1 contenteditable="true" @click="updateId" v-bind:class="props.class"
     v-bind:style="{
         fontSize: + props.fontSize + 'px',
         letterSpacing: + props.tracking + 'px',
@@ -20,7 +20,7 @@ onMounted(() => {
   id = props.id
 })
 
-function funyboi () {
+function updateId () {
   updateCur(id)
 }
 </script>
