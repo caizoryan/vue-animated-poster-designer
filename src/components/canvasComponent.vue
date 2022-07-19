@@ -11,6 +11,7 @@
     :left="text.left"
     :top="text.top"
     :text="text.text"
+    :color="text.color"
     />
 </div>
 </template>

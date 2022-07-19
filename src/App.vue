@@ -2,7 +2,7 @@
 import canvasComponent from './components/canvasComponent.vue'
 import controlsComponent from './components/controlsComponent.vue'
 import { ref, reactive, provide } from 'vue'
-const texts = reactive([{ id: 0, text: 'header', tracking: 5, fontSize: 50, lineSpacing: 50, weight: 900, top: 200, left: 200 }])
+const texts = reactive([{ color: { r: 255, g: 255, b: 255 }, id: 0, text: 'header', tracking: 5, fontSize: 50, lineSpacing: 50, weight: 900, top: 200, left: 200 }])
 var totalElements = ref(0)
 const cur = ref(0)
 function updateCur (number) {
@@ -18,7 +18,7 @@ function changeValues (values) {
 }
 function addElement () {
   totalElements.value++
-  texts.push({ id: totalElements.value, text: 'newText' + totalElements.value, tracking: 1, fontSize: 50, lineSpacing: 50, weight: 500, top: texts[totalElements.value - 1].top + 100, left: 250 })
+  texts.push({ id: totalElements.value, text: 'newText' + totalElements.value, tracking: 1, fontSize: 50, lineSpacing: 50, weight: 500, top: texts[totalElements.value - 1].top + 100, left: 250, color: { r: 255, g: 255, b: 255 } })
 }
 </script>
 

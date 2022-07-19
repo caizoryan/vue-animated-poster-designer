@@ -6,13 +6,14 @@
         fontWeight: + props.weight,
         lineHeight: + props.lineSpacing + 'px',
         top: + props.top + 'px',
-        left: + props.left + 'px'
+        left: + props.left + 'px',
+        color: 'rgb(' + props.color.r + ',' + props.color.g + ',' + props.color.b + ')'
     }">{{ props.text }}</h1>
 </template>
 
 <script setup>
 import { defineProps, inject, onMounted } from 'vue'
-const props = defineProps(['id', 'text', 'class', 'tracking', 'fontSize', 'weight', 'top', 'left', 'lineSpacing'])
+const props = defineProps(['id', 'text', 'class', 'tracking', 'fontSize', 'weight', 'top', 'left', 'lineSpacing', 'color'])
 var id = 0
 const updateCur = inject('updateCur')
 

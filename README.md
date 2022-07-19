@@ -14,7 +14,8 @@ Currently only one typeface is available, Acumin Pro
 
 * The text boxes can be moved around using x and y values
 * As many Text Boxes as required can be added
-
+#### Color
+* Change color of the texts
 #### User interface
 * Collapsable Menus
 ## Roadmap — features to be added
@@ -24,7 +25,7 @@ Currently only one typeface is available, Acumin Pro
  * Add your own p5 files
 
 #### Color
-* Add the ability to change the color of text and background
+* ~~Add the ability to change the color of text and background~~
 
 #### Image 
 * Ability to drag and drop images to be used in 'posters'

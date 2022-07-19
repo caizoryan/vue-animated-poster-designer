@@ -59,18 +59,33 @@
         </div>
     </div>
     <div class="controlHeaders">
-        <h1 class="titles">Animate</h1>
-        <button class="collapse" v-if="animate" @click="animate = false">COLLAPSE</button>
-        <button class="collapse" v-else @click="animate = true">OPEN</button>
+        <h1 class="titles">Color</h1>
+        <button class="collapse" v-if="color" @click="color = false">COLLAPSE</button>
+        <button class="collapse" v-else @click="color = true">OPEN</button>
     </div>
-    <div v-if="animate" class="box animate">
-        <div class="inputs">
-            <p>x</p>
-            <input id="inputBox" type="number" v-model="texts[cur].left">
-        </div>
-        <div class="inputs">
-            <p>y</p>
-            <input id="inputBox" type="number" v-model="texts[cur].top">
+    <div v-if="color" class="box animate">
+        <div class="color">
+            <div class="inputs">
+                <p>R</p>
+               <input :style="{
+                background: 'linear-gradient(to right, rgb(0,' + texts[cur].color.g + ',' + texts[cur].color.b + ') 0%, rgb(255,' + texts[cur].color.g + ',' + texts[cur].color.b + ') 100%)'
+               }" type="range" min="0" max="255" v-model="texts[cur].color.r" class="slider">
+            </div>
+            <div class="inputs">
+                <p>G</p>
+               <input :style="{
+                background: 'linear-gradient(to right, rgb(' + texts[cur].color.r + ', 0,' + texts[cur].color.b + ') 0%, rgb(' + texts[cur].color.r + ', 255,' + texts[cur].color.b + ') 100%)'
+               }" type="range" min="0" max="255" v-model="texts[cur].color.g" class="slider">
+            </div>
+            <div class="inputs">
+                <p>B</p>
+               <input :style="{
+                background: 'linear-gradient(to right, rgb(' + texts[cur].color.r + ',' + texts[cur].color.g + ', 0) 0%, rgb(' + texts[cur].color.r + ',' +texts[cur]. color.g + ', 255) 100%)'
+               }" type="range" min="0" max="255" v-model="texts[cur].color.b" class="slider">
+            </div>
+            <div class="colorBox" :style="{
+                backgroundColor: 'rgb(' + texts[cur].color.r + ',' +texts[cur]. color.g + ',' + texts[cur].color.b + ')'
+            }"></div>
         </div>
     </div>
 </div>
@@ -80,6 +95,7 @@
 <script setup>
 import { inject, ref } from 'vue'
 
+// const color = reactive({ r: 10, g: 192, b: 10 })
 //  injects
 const texts = inject('textBoxes')
 const cur = inject('currentElement')
@@ -89,8 +105,12 @@ const addElement = inject('addElement')
 const typography = ref(true)
 const transform = ref(true)
 const elements = ref(true)
-const animate = ref(true)
+const color = ref(false)
 
+// update
+// function updateColor () {
+//   texts[cur].color = 'rgb(' + color.r + ',' + color.g + ',' + color.b + ')'
+// }
 </script>
 
 <style scoped lang="scss">
@@ -185,6 +205,30 @@ const animate = ref(true)
             background-color: white;
             color: black;
         }
+    }
+    .slider{
+        -webkit-appearance: none;
+        outline: none;
+        background: rgb(255, 255, 255);
+        border: 0px solid black;
+        height: 20px;
+        border-radius: 20px;
+        &::-webkit-slider-thumb{
+            -webkit-appearance: none;
+            outline: none;
+        }&::-moz-range-thumb{
+            border: 0px solid white;
+            background: rgb(0, 0, 0);
+            height: 10px;
+            width: 10px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+    }
+
+    .colorBox{
+        width: 100px;
+        height: 100px;
     }
 }
 </style>
