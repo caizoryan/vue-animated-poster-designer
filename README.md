@@ -19,6 +19,12 @@ Currently only one typeface is available, Acumin Pro
 #### User interface
 * Collapsable Menus
 ## Roadmap — features to be added
+
+#### p5
+Basically turn this app into a p5 GUI editor and designer so p5 can be used as a design tool more effectively
+ * A user can add a p5 script which would be read out by the program and converted into a GUI interface
+ * The variables get automatically mapped to either sliders or input fields
+ * The frameRate can also be manipulated with sliders
 #### Animation
  * p5.js based Animation
  * Tinker with p5 variables to make animations work for you
@@ -32,7 +38,7 @@ Currently only one typeface is available, Acumin Pro
 * Ability to manipulate these posters with p5
 
 #### Accounts/Backend 
-* Create accounts to save designs, images p5 
+* Create accounts to save designs, images, p5 scripts
 * Have open source design capabilities maybe?
 
 #### Generative
