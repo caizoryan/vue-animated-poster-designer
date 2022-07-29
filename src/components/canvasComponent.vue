@@ -20,6 +20,12 @@
 import textComponent from './textComponent.vue'
 import { defineProps } from 'vue'
 const props = defineProps(['textBoxes'])
+// function updateCode (code) {
+//   // p5code = code
+//   makep5()
+// }
+// use iframe to make code executable
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -29,9 +35,10 @@ const props = defineProps(['textBoxes'])
   margin-bottom: 0;
   margin-top: 50px;
   overflow: hidden;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 1);
   width: 500px;
   height: 600px;
   border: 1px black solid;
+  position: relative;
 }
 </style>

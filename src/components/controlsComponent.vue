@@ -94,8 +94,6 @@
 
 <script setup>
 import { inject, ref } from 'vue'
-
-// const color = reactive({ r: 10, g: 192, b: 10 })
 //  injects
 const texts = inject('textBoxes')
 const cur = inject('currentElement')
@@ -106,11 +104,6 @@ const typography = ref(true)
 const transform = ref(true)
 const elements = ref(true)
 const color = ref(false)
-
-// update
-// function updateColor () {
-//   texts[cur].color = 'rgb(' + color.r + ',' + color.g + ',' + color.b + ')'
-// }
 </script>
 
 <style scoped lang="scss">
@@ -229,6 +222,9 @@ const color = ref(false)
     .colorBox{
         width: 100px;
         height: 100px;
+    }
+    #p5input{
+        height: 200px;
     }
 }
 </style>
